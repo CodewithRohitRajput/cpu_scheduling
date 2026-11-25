@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPU Scheduling Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>CPU Scheduling Simulator</h1>
+        <p>Understand CPU Scheduling Algorithms Easily</p>
+
+        <h2>Add Process</h2>
+
+        <div class="inputs">
+            <input type="text" id="pid" placeholder="Process ID (P1)">
+            <input type="number" id="arrival" placeholder="Arrival Time">
+            <input type="number" id="burst" placeholder="Burst Time">
+            <input type="number" id="priority" placeholder="Priority">
+
+            <button onclick="addProcess()">Add Process</button>
+        </div>
+
+        <h2>Process List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>PID</th>
+                    <th>Arrival Time</th>
+                    <th>Burst Time</th>
+                    <th>Priority</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="processTable"></tbody>
+        </table>
+
+        <h2>Select Algorithm</h2>
+
+        <select id="algorithm">
+            <option value="FCFS">First Come First Serve</option>
+            <option value="SJF">Shortest Job First</option>
+            <option value="PRIORITY">Priority Scheduling</option>
+            <option value="RR">Round Robin</option>
+        </select>
+
+        <input type="number" id="quantum"
+               placeholder="Time Quantum (Round Robin)">
+
+        <button onclick="simulate()">Simulate</button>
+
+        <h2>Gantt Chart</h2>
+        <div id="gantt"></div>
+
+        <h2>Performance Metrics</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>PID</th>
+                    <th>CT</th>
+                    <th>TAT</th>
+                    <th>WT</th>
+                    <th>RT</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultTable"></tbody>
+        </table>
+
+        <h2>Average Metrics</h2>
+        <div id="average"></div>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
